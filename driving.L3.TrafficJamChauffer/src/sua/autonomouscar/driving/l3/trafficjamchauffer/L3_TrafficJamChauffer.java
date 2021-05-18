@@ -39,6 +39,15 @@ public class L3_TrafficJamChauffer extends L3_DrivingService implements IL3_Traf
 		
 		// L3 traffic jam chauffer
 		
+		/// ADS_L3-5
+		if(this.getRoadSensor().getRoadType() == ERoadType.CITY) {
+			this.debugMessage("Changing to City chauffer ...");
+			this.getNotificationService().notify("Entering city! -> Changing to City chauffer");
+		
+			this.changeToCityChauffer();
+			return this;
+		}
+		
 		// Comprobamos que NO podemos mantener la conducción en nivel 3 de autonomia
 		if ( this.getRoadSensor().getRoadType() == ERoadType.OFF_ROAD || this.getRoadSensor().getRoadType() == ERoadType.STD_ROAD ) {
 			// No podemos seguir conduciendo de manera autónoma

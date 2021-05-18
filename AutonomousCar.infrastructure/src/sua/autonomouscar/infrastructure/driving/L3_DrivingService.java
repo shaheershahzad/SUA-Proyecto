@@ -5,7 +5,9 @@ import org.osgi.framework.BundleContext;
 import sua.autonomouscar.devices.interfaces.IHumanSensors;
 import sua.autonomouscar.devices.interfaces.IRoadSensor;
 import sua.autonomouscar.driving.interfaces.IFallbackPlan;
+import sua.autonomouscar.driving.interfaces.IL3_CityChauffer;
 import sua.autonomouscar.driving.interfaces.IL3_DrivingService;
+import sua.autonomouscar.driving.interfaces.IL3_TrafficJamChauffer;
 import sua.autonomouscar.infrastructure.OSGiUtils;
 import sua.autonomouscar.interfaces.IIdentifiable;
 
@@ -78,4 +80,22 @@ public abstract class L3_DrivingService extends L2_DrivingService implements IL3
 
 		return this;
 	}
+	
+	public IL3_DrivingService changeToTrafficJamChauffer() {
+		this.stopDriving();
+		IL3_TrafficJamChauffer trafficJamChaufferService = OSGiUtils.getService(context, IL3_TrafficJamChauffer.class);
+		trafficJamChaufferService.startDriving();
+		
+		return this;
+	}
+	
+	public IL3_DrivingService changeToCityChauffer() {
+		this.stopDriving();
+		IL3_CityChauffer cityChaufferService = OSGiUtils.getService(context, IL3_CityChauffer.class);
+		
+		cityChaufferService.startDriving();
+		
+		return this;
+	}
+	
 }

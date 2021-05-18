@@ -10,6 +10,7 @@ import sua.autonomouscar.infrastructure.devices.Engine;
 import sua.autonomouscar.infrastructure.devices.Steering;
 import sua.autonomouscar.infrastructure.driving.L3_DrivingService;
 import sua.autonomouscar.interfaces.EFaceStatus;
+import sua.autonomouscar.interfaces.ERoadStatus;
 import sua.autonomouscar.interfaces.ERoadType;
 
 public class L3_HighwayChauffer extends L3_DrivingService implements IL3_HighwayChauffer {
@@ -40,6 +41,18 @@ public class L3_HighwayChauffer extends L3_DrivingService implements IL3_Highway
 	public IDrivingService performTheDrivingFunction() {
 		
 		// L3 highway chauffer
+		
+		// ADS_L3-2
+		if(this.getRoadSensor().getRoadStatus()==ERoadStatus.JAM||this.getRoadSensor().getRoadStatus()==ERoadStatus.COLLAPSED) {
+			this.debugMessage("Changing to Jam chauffer ...");
+			this.getNotificationService().notify("Jam detected! -> Changing to Jam chauffer");
+			
+			
+			this.changeToTrafficJamChauffer();
+			return this;
+			
+		}
+		
 		
 		// Comprobamos que NO podemos mantener la conducción en nivel 3 de autonomia
 		if ( this.getRoadSensor().getRoadType() == ERoadType.OFF_ROAD || this.getRoadSensor().getRoadType() == ERoadType.STD_ROAD ) {
