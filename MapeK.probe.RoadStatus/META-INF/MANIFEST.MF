@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RoadStatus
+Bundle-SymbolicName: MapeK.probe.RoadStatus
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: mapek.probe.roadstatus.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: org.osgi.framework;version="1.3.0",
+ sua.autonomouscar.devices.interfaces,
+ sua.autonomouscar.infrastructure,
+ sua.autonomouscar.interfaces,
+ sua.autonomouscar.mapek.infrastructure.monitorroadstate
+Automatic-Module-Name: MapeK.probe.RoadStatus
