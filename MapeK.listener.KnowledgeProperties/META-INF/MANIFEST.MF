@@ -10,4 +10,6 @@ Import-Package: mapek.interfaces,
  mapek.interfaces.enums,
  org.osgi.framework;version="1.10.0",
  sua.autonomouscar.infrastructure,
+ sua.autonomouscar.interfaces,
+ sua.autonomouscar.mapek.infrastructure.adaptationrules,
  sua.autonomouscar.mapek.infrastructure.knowledgeproperties

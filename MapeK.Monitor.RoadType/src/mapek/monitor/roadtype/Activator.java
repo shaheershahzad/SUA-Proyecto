@@ -1,14 +1,13 @@
-package mapek.probe.roadstatus;
+package mapek.monitor.roadtype;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-
-import sua.autonomouscar.devices.interfaces.IRoadSensor;
+import sua.autonomouscar.mapek.infrastructure.monitors.MonitorRoadType;
 
 public class Activator implements BundleActivator {
 
 	private static BundleContext context;
-	protected Listener controller =null;
+	private MonitorRoadType monitorRoadType = null;
 
 	static BundleContext getContext() {
 		return context;
@@ -16,16 +15,15 @@ public class Activator implements BundleActivator {
 
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
-		this.controller = new Listener(bundleContext);
-		
-		String listenerFilter = "(objectclass="+IRoadSensor.class.getName()+")";
-		this.context.addServiceListener(controller, listenerFilter);
+		this.monitorRoadType = new MonitorRoadType(bundleContext,"MonitorRoadType");
+		this.monitorRoadType.registerThing();
 		
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
-		this.context.removeServiceListener(controller);
 		Activator.context = null;
+		if ( this.monitorRoadType != null )
+			this.monitorRoadType.unregisterThing();
 	}
 
 }

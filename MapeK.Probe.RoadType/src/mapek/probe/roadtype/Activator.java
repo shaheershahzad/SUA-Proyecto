@@ -1,4 +1,4 @@
-package mapek.probe.roadstatus;
+package mapek.probe.roadtype;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
