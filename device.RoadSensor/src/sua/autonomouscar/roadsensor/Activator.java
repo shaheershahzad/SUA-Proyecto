@@ -18,6 +18,12 @@ public class Activator implements BundleActivator {
 		this.roadSensor = new RoadSensor(bundleContext, "RoadSensor");
 		this.roadSensor.registerThing();
 	}
+	
+	public void Update(BundleContext bundleContext) throws Exception {
+		Activator.context = bundleContext;
+		this.roadSensor = new RoadSensor(bundleContext, "RoadSensor");
+		this.roadSensor.registerThing();
+	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
 		if ( this.roadSensor != null )
