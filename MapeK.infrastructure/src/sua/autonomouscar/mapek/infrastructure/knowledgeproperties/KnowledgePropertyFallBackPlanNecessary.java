@@ -4,8 +4,6 @@ import org.osgi.framework.BundleContext;
 
 import mapek.interfaces.IKnowledgeProperty;
 import mapek.interfaces.enums.EFallbackPlanNecessary;
-import mapek.interfaces.enums.EKnowledgeRoadStatus;
-import mapek.interfaces.enums.EKnowledgeRoadType;
 import sua.autonomouscar.infrastructure.Thing;
 
 public class KnowledgePropertyFallBackPlanNecessary extends Thing implements IKnowledgeProperty<EFallbackPlanNecessary> {

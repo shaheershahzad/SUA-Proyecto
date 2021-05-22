@@ -3,18 +3,11 @@ package mapek.listener.knowledgeproperty.fallbackplannecessary;
 import mapek.interfaces.IAdaptationRule;
 import mapek.interfaces.IKnowledgeProperty;
 import mapek.interfaces.enums.EFallbackPlanNecessary;
-import mapek.interfaces.enums.EKnowledgeRoadStatus;
-import mapek.interfaces.enums.EKnowledgeRoadType;
 import sua.autonomouscar.infrastructure.OSGiUtils;
-import sua.autonomouscar.infrastructure.Thing;
 import sua.autonomouscar.interfaces.IIdentifiable;
-import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRuleEnteringCityFromJam;
 import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRuleFallbackPlanEmergency;
 import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRuleFallbackPlanRoadShoulder;
-import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRuleRoadCongestionated;
 import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyFallBackPlanNecessary;
-import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyRoadStatus;
-import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyRoadType;
 
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceEvent;

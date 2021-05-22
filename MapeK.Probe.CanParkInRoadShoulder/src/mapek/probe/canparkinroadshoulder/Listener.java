@@ -7,11 +7,9 @@ import org.osgi.framework.ServiceListener;
 import mapek.interfaces.IMonitor;
 import sua.autonomouscar.devices.interfaces.IDistanceSensor;
 import sua.autonomouscar.devices.interfaces.ILineSensor;
-import sua.autonomouscar.devices.interfaces.IRoadSensor;
 import sua.autonomouscar.infrastructure.OSGiUtils;
 import sua.autonomouscar.interfaces.IIdentifiable;
 import sua.autonomouscar.mapek.infrastructure.monitors.MonitorFallbackPlanNecessary;
-import sua.autonomouscar.mapek.infrastructure.monitors.MonitorRoadStatus;
 
 public class Listener  implements ServiceListener{
 	protected BundleContext context = null;

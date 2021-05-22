@@ -2,17 +2,14 @@ package sua.autonomouscar.mapek.infrastructure.monitors;
 
 import mapek.interfaces.IKnowledgeProperty;
 import mapek.interfaces.IMonitor;
-import mapek.interfaces.enums.EKnowledgeRoadStatus;
 import mapek.interfaces.enums.EKnowledgeRoadType;
 
 import org.osgi.framework.BundleContext;
 
 import sua.autonomouscar.infrastructure.OSGiUtils;
 import sua.autonomouscar.infrastructure.Thing;
-import sua.autonomouscar.interfaces.ERoadStatus;
 import sua.autonomouscar.interfaces.ERoadType;
 import sua.autonomouscar.interfaces.IIdentifiable;
-import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyRoadStatus;
 import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyRoadType;
 
 public class MonitorRoadType extends Thing implements IMonitor<ERoadType>{

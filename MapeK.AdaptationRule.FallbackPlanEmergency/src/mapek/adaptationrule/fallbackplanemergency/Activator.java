@@ -3,7 +3,6 @@ package mapek.adaptationrule.fallbackplanemergency;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRuleEnteringCityFromJam;
 import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRuleFallbackPlanEmergency;
 
 
