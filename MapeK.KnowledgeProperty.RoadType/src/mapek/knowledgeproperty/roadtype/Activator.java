@@ -1,4 +1,4 @@
-package mapek.knowledgeproperties.roadtype;
+package mapek.knowledgeproperty.roadtype;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

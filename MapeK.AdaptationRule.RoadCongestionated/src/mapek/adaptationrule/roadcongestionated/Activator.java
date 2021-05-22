@@ -3,10 +3,7 @@ package mapek.adaptationrule.roadcongestionated;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import sua.autonomouscar.devices.interfaces.IRoadSensor;
 import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRuleRoadCongestionated;
-import sua.autonomouscar.mapek.infrastructure.monitors.MonitorRoadStatus;
-import sua.autonomouscar.mapek.infrastructure.monitors.MonitorRoadType;
 
 public class Activator implements BundleActivator {
 

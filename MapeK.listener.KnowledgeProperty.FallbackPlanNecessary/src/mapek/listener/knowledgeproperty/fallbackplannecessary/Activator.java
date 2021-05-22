@@ -3,7 +3,6 @@ package mapek.listener.knowledgeproperty.fallbackplannecessary;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyRoadStatus;
 import mapek.interfaces.IKnowledgeProperty;
 
 public class Activator implements BundleActivator {

@@ -30,7 +30,7 @@ public class Listener  implements ServiceListener{
 	public void serviceChanged(ServiceEvent event) {
 		IKnowledgeProperty knowledgeProperty = (IKnowledgeProperty)this.context.getService(event.getServiceReference());
 		
-		if(knowledgeProperty instanceof KnowledgePropertyRoadType) {
+		if(knowledgeProperty.getKnowledge()!=null && knowledgeProperty instanceof KnowledgePropertyRoadType) {
 			switch ((EKnowledgeRoadType)knowledgeProperty.getKnowledge()) {
 			case CITY:
 				//System.out.println("Executing adaptation rule: road is city");

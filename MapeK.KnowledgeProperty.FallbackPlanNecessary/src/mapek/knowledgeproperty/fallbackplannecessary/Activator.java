@@ -1,10 +1,8 @@
-package mapek.knowledgeproperties.fallbackplannecessary;
+package mapek.knowledgeproperty.fallbackplannecessary;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-
 import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyFallBackPlanNecessary;
-import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyRoadType;
 
 public class Activator implements BundleActivator {
 

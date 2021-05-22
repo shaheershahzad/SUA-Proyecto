@@ -34,7 +34,7 @@ public class Listener  implements ServiceListener{
 	public void serviceChanged(ServiceEvent event) {
 		IKnowledgeProperty knowledgeProperty = (IKnowledgeProperty)this.context.getService(event.getServiceReference());
 		
-		if(knowledgeProperty instanceof KnowledgePropertyFallBackPlanNecessary) {
+		if(knowledgeProperty.getKnowledge()!=null && knowledgeProperty instanceof KnowledgePropertyFallBackPlanNecessary) {
 			switch ((EFallbackPlanNecessary)knowledgeProperty.getKnowledge()) {
 			case EMERGENCY_FALLBACK:
 				//System.out.println("Executing adaptation rule: EMERGENCY_FALLBACK");

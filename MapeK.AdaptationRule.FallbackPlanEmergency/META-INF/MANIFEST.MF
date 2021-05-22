@@ -10,6 +10,5 @@ Import-Package: mapek.interfaces,
  sua.autonomouscar.devices.interfaces,
  sua.autonomouscar.infrastructure,
  sua.autonomouscar.interfaces,
- sua.autonomouscar.mapek.infrastructure.adaptationrules,
- sua.autonomouscar.mapek.infrastructure.monitors
+ sua.autonomouscar.mapek.infrastructure.adaptationrules
 Automatic-Module-Name: MapeK.AdaptationRule.FallbackPlanEmergency
