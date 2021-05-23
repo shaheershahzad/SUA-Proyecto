@@ -20,7 +20,7 @@ public class Listener  implements ServiceListener{
 	
 	@Override
 	public void serviceChanged(ServiceEvent event) {
-		System.out.println("Detected change: "+event.getType());
+		//System.out.println("Detected change: "+event.getType());
 
 		ILineSensor rightLineSensor=OSGiUtils.getService(context, ILineSensor.class, String.format("(%s=%s)", IIdentifiable.ID, "RightLineSensor"));
 		IDistanceSensor rightDistanceSensor =	OSGiUtils.getService(context, IDistanceSensor.class, String.format("(%s=%s)", IIdentifiable.ID, "RightDistanceSensor"));
