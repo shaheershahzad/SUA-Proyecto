@@ -1,10 +1,10 @@
 package mapek.probe.roadstatus;
 
-import mapek.interfaces.IMonitor;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceEvent;
 import org.osgi.framework.ServiceListener;
 
+import mapek.interfaces.IMonitor;
 import sua.autonomouscar.devices.interfaces.IRoadSensor;
 import sua.autonomouscar.infrastructure.OSGiUtils;
 import sua.autonomouscar.interfaces.IIdentifiable;
