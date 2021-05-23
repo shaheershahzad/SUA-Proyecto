@@ -8,8 +8,10 @@ Bundle-RequiredExecutionEnvironment: JavaSE-11
 Import-Package: mapek.interfaces,
  mapek.interfaces.enums,
  org.osgi.framework;version="1.10.0",
+ sua.autonomouscar.driving.interfaces,
  sua.autonomouscar.infrastructure,
  sua.autonomouscar.interfaces,
  sua.autonomouscar.mapek.infrastructure.monitors
-Export-Package: sua.autonomouscar.mapek.infrastructure.knowledgeproperties,
+Export-Package: sua.autonomouscar.mapek.infrastructure.adaptationrules,
+ sua.autonomouscar.mapek.infrastructure.knowledgeproperties,
  sua.autonomouscar.mapek.infrastructure.monitors

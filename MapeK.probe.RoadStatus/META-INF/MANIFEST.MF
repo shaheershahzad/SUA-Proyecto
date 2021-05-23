@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: RoadStatus
-Bundle-SymbolicName: MapeK.probes
+Bundle-SymbolicName: MapeK.Probe.RoadStatus
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: mapek.probe.roadstatus.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-11
@@ -11,4 +11,4 @@ Import-Package: mapek.interfaces,
  sua.autonomouscar.infrastructure,
  sua.autonomouscar.interfaces,
  sua.autonomouscar.mapek.infrastructure.monitors
-Automatic-Module-Name: MapeK.probe.RoadStatus
+Automatic-Module-Name: MapeK.Probe.RoadStatus
