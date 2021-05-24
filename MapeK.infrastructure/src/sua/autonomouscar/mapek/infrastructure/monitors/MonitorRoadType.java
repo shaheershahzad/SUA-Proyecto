@@ -38,7 +38,6 @@ public class MonitorRoadType extends Thing implements IMonitor<ERoadType>{
 			case OFF_ROAD:
 				roadType = EKnowledgeRoadType.OFF_ROAD;
 				break;
-
 			case STD_ROAD:
 				roadType = EKnowledgeRoadType.STD_ROAD;
 				break;

@@ -6,6 +6,7 @@ import mapek.interfaces.enums.EKnowledgeRoadType;
 import sua.autonomouscar.infrastructure.OSGiUtils;
 import sua.autonomouscar.interfaces.IIdentifiable;
 import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRuleEnteringCityFromJam;
+import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRulesEnteringL2FromL3;
 import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyRoadType;
 
 import org.osgi.framework.BundleContext;
@@ -40,11 +41,13 @@ public class Listener  implements ServiceListener{
 				break;
 			case OFF_ROAD:
 				//System.out.println("Executing adaptation rule: road is off road");
-				
+				AdaptationRulesEnteringL2FromL3 adaptationRulesEnteringL2FromL3OffR =  (AdaptationRulesEnteringL2FromL3)OSGiUtils.getService(context, IAdaptationRule.class, String.format("(%s=%s)", IIdentifiable.ID, "AdaptationRulesEnteringL2FromL3"));
+				adaptationRulesEnteringL2FromL3OffR.executeAdaptation();
 				break;
 			case STD_ROAD:
 				//System.out.println("Executing adaptation rule: road is std road");
-				
+				AdaptationRulesEnteringL2FromL3 adaptationRulesEnteringL2FromL3STD =  (AdaptationRulesEnteringL2FromL3)OSGiUtils.getService(context, IAdaptationRule.class, String.format("(%s=%s)", IIdentifiable.ID, "AdaptationRulesEnteringL2FromL3"));
+				adaptationRulesEnteringL2FromL3STD.executeAdaptation();
 				break;
 			}
 		}
