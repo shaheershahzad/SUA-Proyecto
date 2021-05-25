@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RoadType
+Bundle-SymbolicName: MapeK.listener.KnowledgeProperty.RoadType
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: mapek.listener.knowledgeproperty.roadtype.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: MapeK.listener.KnowledgeProperty.RoadType
+Import-Package: mapek.interfaces,
+ mapek.interfaces.enums,
+ org.osgi.framework;version="1.10.0",
+ sua.autonomouscar.infrastructure,
+ sua.autonomouscar.interfaces,
+ sua.autonomouscar.mapek.infrastructure.adaptationrules,
+ sua.autonomouscar.mapek.infrastructure.knowledgeproperties

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ADS_L3_6_1
+Bundle-SymbolicName: ADS_L3_6_1
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: ads_l3_6_1.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: mapek.interfaces,
+ org.osgi.framework;version="1.3.0",
+ sua.autonomouscar.devices.interfaces,
+ sua.autonomouscar.infrastructure,
+ sua.autonomouscar.interfaces,
+ sua.autonomouscar.mapek.infrastructure.adaptationrules
+Automatic-Module-Name: ADS.L3.6.1
