@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SensorFailurePlan
+Bundle-SymbolicName: MapeK.Probe.SensorFailurePlan
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: mapek.probe.sensorfailureplan.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: MapeK.Probe.SensorFailurePlan
+Import-Package: mapek.interfaces,
+ org.osgi.framework;version="1.10.0",
+ sua.autonomouscar.devices.interfaces,
+ sua.autonomouscar.infrastructure,
+ sua.autonomouscar.interfaces,
+ sua.autonomouscar.mapek.infrastructure.monitors
+
