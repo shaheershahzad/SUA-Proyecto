@@ -1,0 +1,30 @@
+package sua.autonomouscar.mapek.infrastructure.knowledgeproperties;
+
+import org.osgi.framework.BundleContext;
+
+import mapek.interfaces.IKnowledgeProperty;
+import mapek.interfaces.enums.EFallbackPlanNecessary;
+import sua.autonomouscar.infrastructure.Thing;
+
+public class KnowledgePropertyDrivingConfig_ADS_2 extends Thing implements IKnowledgeProperty<EFallbackPlanNecessary> {
+	protected EFallbackPlanNecessary fallbackPlanNecessary;
+	private String propertyName = "KnowledgeRoadType";
+	
+	public KnowledgePropertyDrivingConfig_ADS_2(BundleContext context, String id) {
+		super(context, id);
+		this.addImplementedInterface(IKnowledgeProperty.class.getName());
+	}
+
+	@Override
+	public void updateKnowledge(EFallbackPlanNecessary newKnowledge) {
+		this.fallbackPlanNecessary = newKnowledge;
+		this.setProperty(propertyName, newKnowledge);
+		
+	}
+
+	@Override
+	public EFallbackPlanNecessary getKnowledge() {
+		return (EFallbackPlanNecessary) this.getProperty(propertyName);
+	}
+
+}

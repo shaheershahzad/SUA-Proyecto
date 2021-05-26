@@ -1,0 +1,6 @@
+package mapek.interfaces.enums;
+
+public enum EDrivingConfig_ADS_2 {
+	FALLBACK_ROAD_SHOULDER,
+	EMERGENCY_FALLBACK
+}
