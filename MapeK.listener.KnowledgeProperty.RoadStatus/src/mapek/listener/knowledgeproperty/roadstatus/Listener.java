@@ -48,6 +48,7 @@ public class Listener  implements ServiceListener{
 	}
 }
 
+/*
 package mapek.listener.knowledgeproperty.roadstatus;
 
 import mapek.interfaces.IAdaptationRule;
@@ -95,3 +96,4 @@ public class Listener  implements ServiceListener{
 		
 	}
 }
+*/

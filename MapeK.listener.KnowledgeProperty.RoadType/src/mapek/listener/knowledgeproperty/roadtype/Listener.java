@@ -4,6 +4,7 @@ import mapek.interfaces.IAdaptationRule;
 import mapek.interfaces.IKnowledgeProperty;
 import mapek.interfaces.enums.EKnowledgeRoadType;
 import sua.autonomouscar.infrastructure.OSGiUtils;
+import mapek.interfaces.enums.EKnowledgeRoadStatus;
 import sua.autonomouscar.interfaces.IIdentifiable;
 import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRuleEnteringCityFromJam;
 import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRulesEnteringL2FromL3;
@@ -12,6 +13,11 @@ import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePrope
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceEvent;
 import org.osgi.framework.ServiceListener;
+
+import sua.autonomouscar.mapek.infrastructure.adaptationrules.ADS_L3_3;
+import sua.autonomouscar.mapek.infrastructure.adaptationrules.ADS_L3_6_1;
+import sua.autonomouscar.mapek.infrastructure.adaptationrules.ADS_L3_6_2;
+import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyRoadStatus;
 
 
 public class Listener  implements ServiceListener{
@@ -26,6 +32,7 @@ public class Listener  implements ServiceListener{
 	@Override
 	public void serviceChanged(ServiceEvent event) {
 		IKnowledgeProperty knowledgeProperty = (IKnowledgeProperty)this.context.getService(event.getServiceReference());
+		KnowledgePropertyRoadStatus knowledgePropertyRoadStatus =  (KnowledgePropertyRoadStatus)OSGiUtils.getService(context, IKnowledgeProperty.class, String.format("(%s=%s)", IIdentifiable.ID, "KnowledgePropertyRoadStatus"));
 		
 		if(knowledgeProperty.getKnowledge()!=null && knowledgeProperty instanceof KnowledgePropertyRoadType) {
 			switch ((EKnowledgeRoadType)knowledgeProperty.getKnowledge()) {
@@ -34,10 +41,21 @@ public class Listener  implements ServiceListener{
 				AdaptationRuleEnteringCityFromJam adaptationRuleEnteringCityFromJam =  (AdaptationRuleEnteringCityFromJam)OSGiUtils.getService(context, IAdaptationRule.class, String.format("(%s=%s)", IIdentifiable.ID, "AdaptationRuleEnteringCityFromJam"));
 				adaptationRuleEnteringCityFromJam.executeAdaptation();
 				
+				if(knowledgePropertyRoadStatus != null && knowledgePropertyRoadStatus.getKnowledge() == EKnowledgeRoadStatus.FLUID) {
+					ADS_L3_3 ads_L3_3 =  (ADS_L3_3)OSGiUtils.getService(context, IAdaptationRule.class, String.format("(%s=%s)", IIdentifiable.ID, "ADS_L3_3"));
+					ads_L3_3.executeAdaptation();
+				}
+				
 				break;
 			case HIGHWAY:
 				//System.out.println("Executing adaptation rule: road is higway");
-				
+				if(knowledgePropertyRoadStatus != null && knowledgePropertyRoadStatus.getKnowledge() == EKnowledgeRoadStatus.FLUID) {
+					ADS_L3_6_1 ads_L3_6_1 =  (ADS_L3_6_1)OSGiUtils.getService(context, IAdaptationRule.class, String.format("(%s=%s)", IIdentifiable.ID, "ADS_L3_6_1"));
+					ads_L3_6_1.executeAdaptation();
+				}else if(knowledgePropertyRoadStatus != null && knowledgePropertyRoadStatus.getKnowledge() == EKnowledgeRoadStatus.CONGESTIONATED) {
+					ADS_L3_6_2 ads_L3_6_2 =  (ADS_L3_6_2)OSGiUtils.getService(context, IAdaptationRule.class, String.format("(%s=%s)", IIdentifiable.ID, "ADS_L3_6_2"));
+					ads_L3_6_2.executeAdaptation();
+				}
 				break;
 			case OFF_ROAD:
 				//System.out.println("Executing adaptation rule: road is off road");
@@ -55,7 +73,7 @@ public class Listener  implements ServiceListener{
 		
 	}
 }
-
+/*
 package mapek.listener.knowledgeproperty.roadtype;
 
 import mapek.interfaces.IAdaptationRule;
@@ -130,3 +148,4 @@ public class Listener  implements ServiceListener{
 		
 	}
 }
+*/
