@@ -1,0 +1,44 @@
+package sua.autonomouscar.mapek.infrastructure.knowledgeproperties;
+
+import org.osgi.framework.BundleContext;
+
+import mapek.interfaces.IKnowledgeProperty;
+import mapek.interfaces.enums.EKnowledgeRoadType;
+import mapek.interfaces.enums.EKnowledgeVibrationModes;
+import mapek.interfaces.enums.EPositionInteractionModes_INTERACT_3;
+import sua.autonomouscar.infrastructure.Thing;
+
+public class KnowledgePropertyPositionInteraction extends Thing implements IKnowledgeProperty<EPositionInteractionModes_INTERACT_3> {
+	protected EKnowledgeVibrationModes roadType;
+	private String propertyName = "KnowledgeVibrationMode";
+	
+	public KnowledgePropertyPositionInteraction(BundleContext context, String id) {
+		super(context, id);
+		this.addImplementedInterface(IKnowledgeProperty.class.getName());
+	}
+
+	@Override
+	public void updateKnowledge(EKnowledgeVibrationModes newKnowledge) {
+		this.roadType = newKnowledge;
+		this.setProperty(propertyName, newKnowledge);
+		
+	}
+
+	@Override
+	public EKnowledgeVibrationModes getKnowledge() {
+		return (EKnowledgeVibrationModes) this.getProperty(propertyName);
+	}
+
+	@Override
+	public void updateKnowledge(EPositionInteractionModes_INTERACT_3 newKnowledge) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public EPositionInteractionModes_INTERACT_3 getKnowledge() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

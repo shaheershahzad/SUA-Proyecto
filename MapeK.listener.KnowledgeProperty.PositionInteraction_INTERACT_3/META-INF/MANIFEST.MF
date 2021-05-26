@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PositionInteraction_INTERACT_3
+Bundle-SymbolicName: MapeK.listener.KnowledgeProperty.PositionInteraction_INTERACT_3
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: mapek.listener.knowledgeproperty.positioninteraction_interact_3.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: mapek.interfaces,
+ mapek.interfaces.enums,
+ org.osgi.framework;version="1.3.0",
+ sua.autonomouscar.infrastructure,
+ sua.autonomouscar.interfaces,
+ sua.autonomouscar.mapek.infrastructure.adaptationrules,
+ sua.autonomouscar.mapek.infrastructure.knowledgeproperties
+Automatic-Module-Name: MapeK.listener.KnowledgeProperty.PositionInteraction.INTERACT.3

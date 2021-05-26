@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;ads_l3_6_1&apos; to &apos;mapek.adaptationrule.ads_l3_6_1&apos;&#x0D;&#x0A;- Original project: &apos;Mapek.AdaptationRule.ADS_L3_6_1&apos;&#x0D;&#x0A;- Original element: &apos;Mapek.AdaptationRule.ADS_L3_6_1/src/ads_l3_6_1&apos;&#x0D;&#x0A;- Renamed element: &apos;Mapek.AdaptationRule.ADS_L3_6_1/src/mapek.adaptationrule.ads_l3_6_1&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings&#x0D;&#x0A;- Rename subpackages of the package" description="Rename package &apos;ads_l3_6_1&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;ads_l3_6_1" name="mapek.adaptationrule.ads_l3_6_1" qualified="false" references="true" stamp="1621832462113" textual="false" version="1.0"/>
+</session>

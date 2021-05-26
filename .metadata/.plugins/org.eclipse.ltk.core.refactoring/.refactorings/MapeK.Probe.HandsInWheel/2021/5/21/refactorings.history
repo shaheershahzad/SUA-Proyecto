@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Listener.java&apos; to &apos;MapeK.Probe.Position_INTERACT_3/src/mapek.probe.position_interact_3&apos;&#x0D;&#x0A;- Original project: &apos;MapeK.Probe.HandsInWheel&apos;&#x0D;&#x0A;- Destination element: &apos;MapeK.Probe.Position_INTERACT_3/src/mapek.probe.position_interact_3&apos;&#x0D;&#x0A;- Original element: &apos;mapek.probe.handsinwheel.Listener.java&apos;" description="Copy compilation unit" destination="=MapeK.Probe.Position_INTERACT_3/src&lt;mapek.probe.position_interact_3" element1="/src&lt;mapek.probe.handsinwheel{Listener.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1621870754534" units="1" version="1.0"/>
+</session>
