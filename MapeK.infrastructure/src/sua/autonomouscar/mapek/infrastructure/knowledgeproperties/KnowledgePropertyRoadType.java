@@ -27,7 +27,7 @@ public class KnowledgePropertyRoadType extends Thing implements IKnowledgeProper
 	}
 
 }
-
+/*
 package sua.autonomouscar.mapek.infrastructure.knowledgeproperties;
 
 import org.osgi.framework.BundleContext;
@@ -58,3 +58,4 @@ public class KnowledgePropertyRoadType extends Thing implements IKnowledgeProper
 	}
 
 }
+*/

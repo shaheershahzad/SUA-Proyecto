@@ -7,6 +7,7 @@ import sua.autonomouscar.infrastructure.OSGiUtils;
 import sua.autonomouscar.interfaces.IIdentifiable;
 import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRuleRoadCongestionated;
 import sua.autonomouscar.mapek.infrastructure.knowledgeproperties.KnowledgePropertyRoadStatus;
+import sua.autonomouscar.mapek.infrastructure.adaptationrules.AdaptationRulesFromCongestedToFluidTraffic;
 
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceEvent;
@@ -37,7 +38,8 @@ public class Listener  implements ServiceListener{
 				break;
 			case FLUID:
 				//System.out.println("Executing adaptation rule: road fluid");
-				
+				AdaptationRulesFromCongestedToFluidTraffic adaptationRulesFromCongestedToFluidTraffic =  (AdaptationRulesFromCongestedToFluidTraffic)OSGiUtils.getService(context, IAdaptationRule.class, String.format("(%s=%s)", IIdentifiable.ID, "AdaptationRulesFromCongestedToFluidTraffic"));
+				adaptationRulesFromCongestedToFluidTraffic.executeAdaptation();
 				break;
 			}
 		}
@@ -45,7 +47,7 @@ public class Listener  implements ServiceListener{
 		
 	}
 }
-
+/*
 package mapek.listener.knowledgeproperty.roadstatus;
 
 import mapek.interfaces.IAdaptationRule;
@@ -95,3 +97,4 @@ public class Listener  implements ServiceListener{
 		
 	}
 }
+*/

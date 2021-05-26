@@ -32,7 +32,7 @@ public class Listener  implements ServiceListener{
 		
 	}
 }
-
+/*
 package mapek.probe.roadstatus;
 
 import org.osgi.framework.BundleContext;
@@ -67,3 +67,4 @@ public class Listener  implements ServiceListener{
 		
 	}
 }
+*/

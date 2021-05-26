@@ -50,7 +50,7 @@ public class MonitorRoadType extends Thing implements IMonitor<ERoadType>{
 	}
 
 }
-
+/*
 package sua.autonomouscar.mapek.infrastructure.monitors;
 
 import mapek.interfaces.IKnowledgeProperty;
@@ -102,3 +102,4 @@ public class MonitorRoadType extends Thing implements IMonitor<ERoadType>{
 	}
 
 }
+*/
