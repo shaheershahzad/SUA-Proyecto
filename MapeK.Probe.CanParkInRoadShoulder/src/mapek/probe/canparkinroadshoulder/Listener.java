@@ -32,14 +32,17 @@ public class Listener  implements ServiceListener{
 			case ServiceEvent.MODIFIED:
 				MonitorFallbackPlanNecessary monitorFallbackPlanNecessary =  (MonitorFallbackPlanNecessary) OSGiUtils.getService(context, IMonitor.class, String.format("(%s=%s)", IIdentifiable.ID, "MonitorFallbackPlanNecessary"));
 
-				if(rightLineSensor==null||rightDistanceSensor==null) {
-					//Actualizar el monitor a que NO se puede aparcar en cuneta 
-					monitorFallbackPlanNecessary.changedState(false);
-				}else {
-					//Actualizar el monitor a que SI se puede aparcar en cuneta 
-					monitorFallbackPlanNecessary.changedState(true);
+				if(monitorFallbackPlanNecessary!=null) {
+					if(rightLineSensor==null||rightDistanceSensor==null) {
+						//Actualizar el monitor a que NO se puede aparcar en cuneta 
+						monitorFallbackPlanNecessary.changedState(false);
+					}else {
+						//Actualizar el monitor a que SI se puede aparcar en cuneta 
+						monitorFallbackPlanNecessary.changedState(true);
 
+					}
 				}
+				
 			
 		}
 		

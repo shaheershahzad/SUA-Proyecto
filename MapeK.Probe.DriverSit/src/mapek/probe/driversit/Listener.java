@@ -32,15 +32,17 @@ public class Listener  implements ServiceListener{
 			case ServiceEvent.REGISTERED:
 			case ServiceEvent.MODIFIED:
 				MonitorInteractVibration monitorInteractVibration =  (MonitorInteractVibration)OSGiUtils.getService(context, IMonitor.class, String.format("(%s=%s)", IIdentifiable.ID, "MonitorInteractVibration"));
+				if(monitorInteractVibration!=null) {
+					if(seatSensor.isSeatOccuppied()) {
+						//Actualizar el monitor a que el asiento del piloto está ocupado
+						monitorInteractVibration.changedState(EMonitorInteractVibrationStates.DRIVER_SEATED);
+					}else {
+						//Actualizar el monitor a que el asiento del piloto no está ocupado
+						monitorInteractVibration.changedState(EMonitorInteractVibrationStates.DRIVER_NOT_SEATED);
 
-				if(seatSensor.isSeatOccuppied()) {
-					//Actualizar el monitor a que el asiento del piloto está ocupado
-					monitorInteractVibration.changedState(EMonitorInteractVibrationStates.DRIVER_SEATED);
-				}else {
-					//Actualizar el monitor a que el asiento del piloto no está ocupado
-					monitorInteractVibration.changedState(EMonitorInteractVibrationStates.DRIVER_NOT_SEATED);
-
+					}
 				}
+				
 			
 			}
 		}

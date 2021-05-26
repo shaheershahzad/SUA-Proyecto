@@ -34,14 +34,18 @@ public class Listener  implements ServiceListener{
 			case ServiceEvent.REGISTERED:
 			case ServiceEvent.MODIFIED:
 				MonitorPositionInteraction monitorPositionInteraction =  (MonitorPositionInteraction)OSGiUtils.getService(context, IMonitor.class, String.format("(%s=%s)", IIdentifiable.ID, "MonitorPositionInteraction"));
-				if(seatSensor.isSeatOccuppied()) {
-					//Actualizar el monitor a que el asiento del conductor está ocupado
-					monitorPositionInteraction.changedState(EMonitorInteractVibrationStates.DRIVER_SEATED);
-				}else {
-					//Actualizar el monitor a que el asiento del conductor no está ocupado
-					monitorPositionInteraction.changedState(EMonitorInteractVibrationStates.DRIVER_NOT_SEATED);
+				
+				if(monitorPositionInteraction!=null) {
+					if(seatSensor.isSeatOccuppied()) {
+						//Actualizar el monitor a que el asiento del conductor está ocupado
+						monitorPositionInteraction.changedState(EMonitorInteractVibrationStates.DRIVER_SEATED);
+					}else {
+						//Actualizar el monitor a que el asiento del conductor no está ocupado
+						monitorPositionInteraction.changedState(EMonitorInteractVibrationStates.DRIVER_NOT_SEATED);
 
+					}
 				}
+				
 			
 		}
 		

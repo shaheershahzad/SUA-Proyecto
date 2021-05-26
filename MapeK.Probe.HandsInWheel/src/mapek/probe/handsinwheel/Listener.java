@@ -31,14 +31,18 @@ public class Listener  implements ServiceListener{
 			case ServiceEvent.REGISTERED:
 			case ServiceEvent.MODIFIED:
 				MonitorInteractVibration monitorInteractVibration =  (MonitorInteractVibration)OSGiUtils.getService(context, IMonitor.class, String.format("(%s=%s)", IIdentifiable.ID, "MonitorInteractVibration"));
-				if(handsOnWheelSensor.areTheHandsOnTheSteeringWheel()) {
-					//Actualizar el monitor a que las manos están en el volante
-					monitorInteractVibration.changedState(EMonitorInteractVibrationStates.HANDS_ON_WHEEL);
-				}else {
-					//Actualizar el monitor a que las manos NO están en el volante
-					monitorInteractVibration.changedState(EMonitorInteractVibrationStates.HANDS_OFF_WHEEL);
+				
+				if(monitorInteractVibration!=null) {
+					if(handsOnWheelSensor.areTheHandsOnTheSteeringWheel()) {
+						//Actualizar el monitor a que las manos están en el volante
+						monitorInteractVibration.changedState(EMonitorInteractVibrationStates.HANDS_ON_WHEEL);
+					}else {
+						//Actualizar el monitor a que las manos NO están en el volante
+						monitorInteractVibration.changedState(EMonitorInteractVibrationStates.HANDS_OFF_WHEEL);
 
+					}
 				}
+				
 			
 		}
 		

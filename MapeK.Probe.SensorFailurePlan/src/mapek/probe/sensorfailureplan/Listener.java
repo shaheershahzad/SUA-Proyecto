@@ -34,14 +34,17 @@ public class Listener implements ServiceListener{
 			case ServiceEvent.MODIFIED:
 				 MonitorVehicleContext monitorVehicleContext =  (MonitorVehicleContext) OSGiUtils.getService(context, IMonitor.class, String.format("(%s=%s)", IIdentifiable.ID, "MonitorVehicleContext"));
 
-				if(rightLineSensor==null||rightDistanceSensor==null) {
-					//Actualizar el monitor a que NO se puede realizar el cambio/remplazo 
-					monitorVehicleContext.changedState(false);
-				}else {
-					//Actualizar el monitor a que SI se puede realizar el cambio/remplazo 
-					monitorVehicleContext.changedState(true);
+				 if(monitorVehicleContext!=null) {
+					 if(rightLineSensor==null||rightDistanceSensor==null) {
+							//Actualizar el monitor a que NO se puede realizar el cambio/remplazo 
+							monitorVehicleContext.changedState(false);
+						}else {
+							//Actualizar el monitor a que SI se puede realizar el cambio/remplazo 
+							monitorVehicleContext.changedState(true);
 
-				}
+						}
+				 }
+				
 			
 		}
 		
