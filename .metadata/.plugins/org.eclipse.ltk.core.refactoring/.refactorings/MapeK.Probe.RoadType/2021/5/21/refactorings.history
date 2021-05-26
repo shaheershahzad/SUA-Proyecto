@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Listener.java&apos; to &apos;MapeK.Probe.Fallback_ADS_2/src/mapek.probe.fallback_ads_2&apos;&#x0D;&#x0A;- Original project: &apos;MapeK.Probe.RoadType&apos;&#x0D;&#x0A;- Destination element: &apos;MapeK.Probe.Fallback_ADS_2/src/mapek.probe.fallback_ads_2&apos;&#x0D;&#x0A;- Original element: &apos;mapek.probe.roadtype.Listener.java&apos;" description="Copy compilation unit" destination="=MapeK.Probe.Fallback_ADS_2/src&lt;mapek.probe.fallback_ads_2" element1="/src&lt;mapek.probe.roadtype{Listener.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1621983391191" units="1" version="1.0"/>
+</session>

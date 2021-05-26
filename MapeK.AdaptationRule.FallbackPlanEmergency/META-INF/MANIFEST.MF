@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: FallbackPlanEmergency
+Bundle-SymbolicName: MapeK.AdaptationRule.FallbackPlanEmergency
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: mapek.adaptationrule.fallbackplanemergency.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: mapek.interfaces,
+ org.osgi.framework;version="1.3.0",
+ sua.autonomouscar.devices.interfaces,
+ sua.autonomouscar.infrastructure,
+ sua.autonomouscar.interfaces,
+ sua.autonomouscar.mapek.infrastructure.adaptationrules
+Automatic-Module-Name: MapeK.AdaptationRule.FallbackPlanEmergency
